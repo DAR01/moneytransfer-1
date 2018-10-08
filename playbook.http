@@ -1,0 +1,43 @@
+# Money Transfer API Playbook
+#
+# Below is a sample requests that can be tried against the API.
+# You can try some requests below as is or tweak if necessary.
+#
+
+# Create New Account
+POST http://localhost:8080/moneytransfer/accounts
+Accept: application/json
+Content-Type: application/json
+
+{
+  "amount": 1000.00,
+  "currency": "EUR"
+}
+
+
+###
+
+# Get account by accountNo
+GET http://localhost:8080/moneytransfer/accounts/1
+Accept: application/json
+
+###
+
+# Get account transactions
+GET http://localhost:8080/moneytransfer/accounts/1/transactions
+Accept: application/json
+
+###
+
+# Transfer money amount 150.00 from account №1 to account №2.
+POST http://localhost:8080/moneytransfer/transfer/
+Content-Type: application/json
+
+{
+  "fromAccount": 1,
+  "amount": 150.00,
+  "currency": "EUR",
+  "toAccount": 2
+}
+
+###
